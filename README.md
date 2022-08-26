@@ -394,4 +394,4 @@ Using genious, the allignements per gene where uploaded and concatenated using
 	
 and exporting the resulting file in .nex format. 
 
-15. Upload the nexus format file into SplitsTree and create a network using: ```Networks -> MedianNetwrok``
+15. Upload the nexus format file into SplitsTree and create a network using: ```Networks -> MedianNetwrok```
