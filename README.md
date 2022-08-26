@@ -75,8 +75,8 @@ After:
 10. Generating windows using bedtools 
 
 
-	module load /opt/rrzk/modules/experimental/bedtools/2.29.2 (bedtools on cheops1)
-	mkdir -p /scratch/lvilleg1/MAL/Final_preprocessing/tmp
+```module load /opt/rrzk/modules/experimental/bedtools/2.29.2``` (bedtools on cheops1)
+```mkdir -p /scratch/lvilleg1/MAL/Final_preprocessing/tmp```
 
 
 	bedtools makewindows -g /home/lvilleg1/reference_genomes/panagrolaimus_ps1159.PRJEB32708.WBPS15.genomic.accu.dict -w 100000 | split -l 1 - /scratch/lvilleg1/MAL/Final_preprocessing/tmp
