@@ -31,7 +31,7 @@ Pre-processing
 
 5. Remove duplicates using picard
 
-	java -jar picard.jar MarkDuplicatesWithMateCigar I=MALmappedreadstoreference.sort.bam O=MALmappedreadstoreference.rmd.bam M=mappedreadstoreference.bam.metrics VALIDATION_STRINGENCY=SILENT MINIMUM_DISTANCE=300 REMOVE_DUPLICATES=true
+```java -jar picard.jar MarkDuplicatesWithMateCigar I=MALmappedreadstoreference.sort.bam O=MALmappedreadstoreference.rmd.bam M=mappedreadstoreference.bam.metrics VALIDATION_STRINGENCY=SILENT MINIMUM_DISTANCE=300 REMOVE_DUPLICATES=true```
 
 6. Remove low quality reads 
 
@@ -147,7 +147,6 @@ commands implemented on re-sequencing data from Illumina sequencing.
 
 3. Creating list for looping further analysis
   
- #create file list
 ```ls -1 | sed 's/_bwamem.sam//g' > list-XX```
 
 4. Convert sam to bam and sort files
