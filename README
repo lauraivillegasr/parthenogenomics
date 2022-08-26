@@ -91,6 +91,7 @@ Running accumulate:
 
 A change had to be done on the parsers.cc file from accuMUlate. 
 
+
     11.1. As the error was coming from the condition of the if defined in line XXX not being fulfilled, we added a print statement that would show exactly what the error was: 
 
 ```std::cout << "HOLA SOY LAURA***********: " << start_index; -> prints the start_index that is problematic```
