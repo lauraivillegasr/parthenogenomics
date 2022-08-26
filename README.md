@@ -41,7 +41,7 @@ Samtools flagstat can be used to check quality of mapping
 
 7. To check that the header is correctly stablished
 
-```samtools view -H MALmappedreadstoreference.rmd.bam | grep '^@RG'````
+```samtools view -H MALmappedreadstoreference.rmd.bam | grep '^@RG'```
 ```for f in *q30.bam ; do samtools view -H $f | grep '^@RG'; done```
 
 8. Merging files for accuMUlate 
