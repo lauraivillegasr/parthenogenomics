@@ -186,7 +186,7 @@ commands implemented on re-sequencing data from Illumina sequencing.
 
 ```samtools view -q 30 -b popX_bwamem.sort.bam > popX_bwamem.sort.q30.bam```
 
-9. Gatk haplotypecaller. Info on the tool: https://gatk.broadinstitute.org/hc/en-us/articles/360037225632-HaplotypeCaller
+9. Gatk haplotypecaller. 
 
 
     9.1. Indexing files after filtering
@@ -198,7 +198,7 @@ commands implemented on re-sequencing data from Illumina sequencing.
 
 **ADDITIONAL INFORMATION ON PRE-PROCESSING:**
 
-1. For p_superbus I used NGM - reads shorter than 70bp. Info on the tool: https://github.com/Cibiv/NextGenMap/wiki
+1. For p_superbus I used NGM - reads shorter than 70bp. 
 
 	1.1 Create index for mapping:
 ```ngm -r reference-sequence.fa```
