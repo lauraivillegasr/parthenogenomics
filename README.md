@@ -57,9 +57,9 @@ Samtools flagstat can be used to check quality of mapping
 9. Prepare data for accumulate, obtain ini file and obtain GC content using accumulate tools (pre-requisite: pip3.6 install biopython) ALL THINGS THAT NEEDED PYTHON WHERE SUBMITTED TO CHEOPS0 - note on installing boost for accuMUlate: version 1.73 wouldn’t work, I used 1.62
 
 ```module load samtools
-module load python/3.6.8
-cd /scratch/lvilleg1/MAL/Final_preprocessing
-samtools view -H parthenoPS1159_merged.bam | python3 /home/lvilleg1/accuMulate-tools/extract_samples.py PS1159_refpool - >> params.PS1159.ini
+```module load python/3.6.8```
+```cd /scratch/lvilleg1/MAL/Final_preprocessing```
+```samtools view -H parthenoPS1159_merged.bam | python3 /home/lvilleg1/accuMulate-tools/extract_samples.py PS1159_refpool - >> params.PS1159.ini```
 python3 /home/lvilleg1/accuMulate-tools/GC_content.py /home/lvilleg1/reference_genomes/PS1159_reference_genome >> params.PS1159.ini```
 
 NOTE: CHEOPS ONLY allows to install Biopython on python 3 using pip, however, the scripts of accu-tools are written for python 2. Had to do some editing on printing statement (adapt it to python3 - was written in python2):
