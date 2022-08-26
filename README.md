@@ -10,7 +10,7 @@ Use sanger encoding for all files (changing those with solexa):
 Pre-processing 
 1. Trimming
 
-```fastp -i MALrawreadsforward.fq.gz  -I MALrawreadsreverse.fq.gz -o MALreadsforward.fa.gz -O MALreadsreverse.fa.gz -h reportfromreads``
+```fastp -i MALrawreadsforward.fq.gz  -I MALrawreadsreverse.fq.gz -o MALreadsforward.fa.gz -O MALreadsreverse.fa.gz -h reportfromreads```
 
 2. Mapping
 
