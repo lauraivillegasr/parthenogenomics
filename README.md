@@ -275,11 +275,13 @@ for MALpops a coverage range of 10 - 55 for asexual populations and 10-40 for th
 
 Plots for visualizing results ere generated using ggplot2 on R.
 
-4. Alternative theta estimation using Tetmer - This tool estimates theta on only homologous copies in triloid genomes, which allows us to see how the third copy porivdes more genetic diversity.
+4. Alternative theta estimation using Tetmer - This tool estimates theta on only homologous copies in (polyploid) our case triploid genomes, which allows us to see how the third copy porivdes more genetic diversity.
 
-	kat hist -o kmerspectra_fortetmer rawreadsforward.fq.gz rawreadsreverse.fq.gz 
+K-mer spectra of reads for each population was obtained as: 
 
-Provide histogram to tetmer and obtain per-k-mer theta (if k=21, then you'd have to multiply your result times 21).
+	kat hist -o kmerspectra_fortetmer rawreadsforward.fq.gz rawreadsreverse.fq.gz
+	
+Provide histogram to tetmer and obtain per-k-mer theta, the autofit optio was selected for triploid allopoliploids. Since Kmer size k=27, the per Kmer theta result with the tool was divided by 27 to obtain the per nulceotide estimation. 
 
 **Part 3.** **GENE NETWORK USING BUSCO GENES**
 
