@@ -193,7 +193,7 @@ commands implemented on re-sequencing data from Illumina sequencing.
 ```ls *.bam | parallel samtools index '{}'```
 
     9.2. Haplotype calling 
-```gatk HaplotypeCaller -R reference_genomes/panagrolaimus_es5.PRJEB32708.WBPS15.genomic.fa -I filesq30/P_bromber.sort.rmd.q30.bam -O P-bromber.vcf```
+```gatk HaplotypeCaller -R reference_genomes/reference.genomic.fa -I filesq30/popX_bwamem.sort.rmd.q30.bam -O popX.vcf```
 
 
 **ADDITIONAL INFORMATION ON PRE-PROCESSING:**
@@ -215,7 +215,7 @@ pear output gives: file.unassembled.forward.fastq, file.unassembled.reverse.fast
 
 Mapping for this files was done twice: once for assembly and once for unassembled reads and then they were merged. 
 
-```bwamem2 mem -M -t 30 -R "@RG\tID:ASEX\tSM:PS1806\tPL:ILLUMINA\tPU:1" reference-genome.fasta file.unassembled.forward.fastq file.unassembled.reverse.fastq > mapped_unassembledpear.sam```  #no extra indexing required, as the same index from previous mapping could be used
+```bwamem2 mem -M -t 30 -R "@RG\tID:sample-id\tSM:sample\tPL:ILLUMINA\tPU:1" reference-genome.fasta file.unassembled.forward.fastq file.unassembled.reverse.fastq > mapped_unassembledpear.sam```  #no extra indexing required, as the same index from previous mapping could be used
 
 After re-mapping in either case, all steps from pre-processing were followed again. 
 
