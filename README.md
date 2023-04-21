@@ -100,15 +100,15 @@ We used the already obtained depth files from ```samtools depth filename.bam > f
 ```cat MALmappedreadstoreference.sort.bam.depth | awk '{if ($3 >=10 && $3 <=50) print $0}' | wc -l ```
 
 
-14. Obtaining mutation rates and confidence intervals: 
+14. Obtaining mutation rates and credibility intervals: 
 
     15.1. For mutation rates the following equation was used for each of the mutation lines: 
 
 	μ=(called mutations)/(generations∗callable sites)
 
-    14.2. Average of μ for each of the strains was calculated. (Can’t insert equation, basically all μ divided the total number of μ for the strain). 
+    14.2. Average of μ for each of the strains was calculated.All μ divided to the total number of μ for the strain. 
 
-    14.3. Estimation of confidence intervals: 
+    14.3. Estimation of credibility intervals: 
 
 Downloading Bayesian first aid on R
 
@@ -122,7 +122,7 @@ Downloading Bayesian first aid on R
 	bayes.poisson.test(comparing, sites)
 	plot(bayes.poisson.test(comparing, sites))
 
-Sites refers to the number of callable sites for each reproduction mode. The result of this analysis tells us how different our groups are and provides confidence intervals of the values: a lower limit and an upper limit.
+Sites refers to the number of callable sites for each reproduction mode. The result of this analysis tells us how different our groups are and provides credibility intervals of the values: a lower limit and an upper limit.
 
 
 
@@ -273,7 +273,7 @@ for MALpops a coverage range of 10 - 55 for asexual populations and 10-40 for th
 	awk '{ total += $5; count++ } END { print total/count }' Xsexpop.mpileup_WT.corrected
 
 
-Plots for visualizing results ere generated using ggplot2 on R.
+Plots for visualizing results were generated using ggplot2 on R.
 
 4. Alternative theta estimation using Tetmer - This tool estimates theta on only homologous copies in (polyploid) our case triploid genomes, which allows us to see how the third copy porivdes more genetic diversity.
 
@@ -281,7 +281,7 @@ K-mer spectra of reads for each population was obtained as:
 
 	kat hist -o kmerspectra_fortetmer rawreadsforward.fq.gz rawreadsreverse.fq.gz
 	
-Provide histogram to tetmer and obtain per-k-mer theta, the autofit optio was selected for triploid allopoliploids. Since Kmer size k=27, the per Kmer theta result with the tool was divided by 27 to obtain the per nulceotide estimation. 
+Provide histogram to tetmer and obtain per-k-mer theta, the autofit optio was selected for triploid allopoliploids (AAB). Since Kmer size k=27, the per Kmer theta result with the tool was divided by 27 to obtain the per nulceotide estimation on homologous copies. 
 
 **Part 3.** **GENE NETWORK USING BUSCO GENES**
 
@@ -333,7 +333,7 @@ Note: usually steps 3 and 4 are performed as one command ```bcftools mpileup -Ou
 
 10. Create a consensus sequence, it takes the reference genome we mapped against -R, provide the output name we want for our file -O, the region from the reference genome that we want to have a consensus sequence from while using the reads present in this region -L and the VCF file  
 
-(the list only contains the contain position as it is common between all strains, individual scripts were submitted for each strain to allow manual specification of files to be used as input e.g. $j.bcf.vcf where region is $j
+(the list only contains positions common between all strains, individual scripts were submitted for each strain to allow manual specification of files to be used as input e.g. $j.bcf.vcf where region is $j
 
 	while read f ;do gatk-4.2.3.0/gatk FastaAlternateReferenceMaker -R referencegenome.genomic.fa -O $f.Xpop.consensus.fa -L $f -V $f.Xpop.vcf ; 
 	
