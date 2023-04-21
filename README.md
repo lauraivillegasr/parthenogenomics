@@ -368,7 +368,7 @@ Xpop can be change in each case for the name of folder/strain
 
 ```grep -o '>' Pops_contig10078:2915-14059_for_mafft | wc -l ```
 
-You can also check the headers themselves 
+Also checked the headers themselves 
 
 ```grep '>' changed_PS1159_contig10078:2915-14059_for_mafft```
 
